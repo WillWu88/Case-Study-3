@@ -32,8 +32,8 @@ snapnow
 
 %% Filter a noisy signal
 
-load('handel.mat');
-% load('noisyhandel.mat');
+%load('handel.mat');
+load('noisyhandel.mat');
 % load('apollo11-main-landing.mat');
 % load('noisy-apollo11-main-landing.mat');
 
@@ -41,7 +41,8 @@ load('handel.mat');
 h = 1/Fs;
 
 % compute signal output from circuit
-VsoundFiltered = RCfilter(Vsound,h);
+VsoundFiltered = RCfilter(Vsound',h);
+size(VsoundFiltered)
 
 % compare power spectra
 plotPowerSpectrum(Vsound,Fs);
